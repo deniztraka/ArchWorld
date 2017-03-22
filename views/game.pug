@@ -1,0 +1,15 @@
+extends layout
+
+block head
+    script(src='/socket.io/socket.io.js')
+    script(src='/javascripts/libs/phaser.js')
+    script(src='/javascripts/states/boot.js')
+    script(src='/javascripts/states/preloader.js')
+    script(src='/javascripts/states/mainMenu.js')
+    script(src='/javascripts/game.js')
+
+block content
+  h1 ArchWorld
+  p Welcome to Archworld
+
+  div(id='game')

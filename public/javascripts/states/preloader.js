@@ -1,0 +1,3 @@
+ArchWorld.Preloader = function (game) {
+
+};

@@ -1,0 +1,3 @@
+ArchWorld.MainMenu = function (game) {
+
+};
