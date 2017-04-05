@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -5,14 +7,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-var game = require('./routes/game');
+var indexRoute = require('./routes/index');
+var usersRoute = require('./routes/users');
+var gameRoute = require('./routes/game');
 
 var app = express();
 
-var server = require('http').Server(app);
-var io = require('socket.io').listen(server);
+var nodeServer = require('http').Server(app);
+var io = require('socket.io').listen(nodeServer);
 
 
 
@@ -28,9 +30,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
-app.use('/game', game);
+app.use('/', indexRoute);
+app.use('/users', usersRoute);
+app.use('/game', gameRoute);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -50,8 +52,14 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-server.listen(5000,function(){ // Listens to port 5000
-    console.log('Listening on '+server.address().port);
+nodeServer.listen(5000,function(){ // Listens to port 5000
+    console.log('Listening on ' + nodeServer.address().port);
 });
+
+const ServerEngine = require('./server/engines/server');
+const GameEngine = require('./server/engines/game');
+
+const server = new ServerEngine(io, { debug: {}, updateRate: 6 });
+server.start();
 
 module.exports = app;
