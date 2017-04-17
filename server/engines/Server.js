@@ -21,15 +21,7 @@ class Server {
         }
 
         this.gameEngine = new GameEngine();
-
         this.io = io;
-
-        // this.serializer = new Serializer();
-                
-        // this.gameEngine.registerClasses(this.serializer);
-        // this.networkTransmitter = new NetworkTransmitter(this.serializer);
-
-        // this.networkMonitor = new NetworkMonitor();
 
         this.connectedPlayers = {};
         this.playerInputQueues = {};
@@ -38,8 +30,6 @@ class Server {
         this.requestImmediateUpdate = false;
 
         io.on('connection', this.onPlayerConnected.bind(this));
-        // this.gameEngine.on('objectAdded', this.onObjectAdded.bind(this));
-        // this.gameEngine.on('objectDestroyed', this.onObjectDestroyed.bind(this));
 
         return this;
     }
@@ -63,8 +53,12 @@ class Server {
         this.gameEngine.step();
     }
 
-    onPlayerConnected(){
-        console.log("player connected to server.");        
+    onPlayerConnected(socket){
+        console.log(socket.handshake.query["playerName"] + " has connected to server"); 
+        //Todo
+        //send 'createLocalPlayer' command to this socket
+        //send current server state to this socket
+        //send others players info for its vicinity
     }
 }
 

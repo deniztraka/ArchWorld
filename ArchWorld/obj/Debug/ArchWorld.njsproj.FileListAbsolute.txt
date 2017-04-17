@@ -1,1 +1,3 @@
 D:\D.Dev\GitRepos\ArchWorld\ArchWorld\ArchWorld\bin\Microsoft.NodejsTools.WebRole.dll
+C:\dtraka\Self\ArchWorld\ArchWorld\obj\Debug\ArchWorld.njsprojResolveAssemblyReference.cache
+C:\dtraka\Self\ArchWorld\ArchWorld\bin\Microsoft.NodejsTools.WebRole.dll

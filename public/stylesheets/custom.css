@@ -1,0 +1,17 @@
+body{
+    background: url('../images/bg.png')    
+}
+
+.game{
+    margin-top:70px;   
+    text-align: center; 
+}
+
+#game canvas{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+footer{
+    margin-top:50px;
+}

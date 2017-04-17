@@ -10,7 +10,7 @@ game.state.add('Boot', ArchWorld.Boot);
 game.state.add('Preloader', ArchWorld.Preloader);
 game.state.add('MainMenu', ArchWorld.MainMenu);    
 // game.state.add('CharacterCustomization', ArchWorld.CharacterCustomization);
-// game.state.add('Game', ArchWorld.Game);
+game.state.add('GamePlay', ArchWorld.GamePlay);
 
 
 window.onload = function() {

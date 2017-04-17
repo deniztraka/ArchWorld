@@ -16,13 +16,40 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Compile Include="public\javascripts\core\ClientNetworkEventManager.js" />
+    <Compile Include="public\javascripts\helpers\assetHelper.js" />
+    <Compile Include="public\javascripts\libs\phaser-input.js" />
+    <Compile Include="public\javascripts\libs\phaser-input.min.js" />
+    <Compile Include="public\javascripts\states\gamePlay.js" />
     <Compile Include="server\engines\Game.js" />
     <Compile Include="server\engines\Server.js" />
     <Compile Include="server\engines\World.js" />
     <Compile Include="server\libs\Schedular.js" />
     <Content Include=".gitignore" />
+    <Content Include="components\accordion.pug" />
+    <Content Include="components\alerts.pug" />
+    <Content Include="components\bootswatch.pug" />
+    <Content Include="components\buttons.pug" />
+    <Content Include="components\carousel.pug" />
+    <Content Include="components\dropdowns.pug" />
+    <Content Include="components\forms.pug" />
+    <Content Include="components\icons.pug" />
+    <Content Include="components\images.pug" />
+    <Content Include="components\labels.pug" />
+    <Content Include="components\list-groups.pug" />
+    <Content Include="components\modal.pug" />
+    <Content Include="components\navbar.pug" />
+    <Content Include="components\navs.pug" />
+    <Content Include="components\panels.pug" />
+    <Content Include="components\progress-bars.pug" />
+    <Content Include="components\tables.pug" />
+    <Content Include="components\tabs.pug" />
+    <Content Include="components\toggle.pug" />
+    <Content Include="components\tooltips.pug" />
     <Content Include="jsconfig.json" />
     <Content Include="package.json" />
+    <Content Include="public\images\bg.png" />
+    <Content Include="public\images\game\preloadr_bar.png" />
     <Content Include="README.md" />
     <Compile Include="app.js" />
     <Compile Include="routes\game.js" />
@@ -38,12 +65,18 @@
     <Compile Include="public\javascripts\states\boot.js" />
     <Compile Include="public\javascripts\states\mainMenu.js" />
     <Compile Include="public\javascripts\states\preloader.js" />
+    <Content Include="_bootstrap.pug" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ArchWorld" />
     <Folder Include="bin" />
+    <Folder Include="components\" />
     <Folder Include="public" />
+    <Folder Include="public\images\" />
+    <Folder Include="public\images\game\" />
     <Folder Include="public\javascripts" />
+    <Folder Include="public\javascripts\core\" />
+    <Folder Include="public\javascripts\helpers\" />
     <Folder Include="public\javascripts\libs" />
     <Folder Include="public\javascripts\states" />
     <Folder Include="public\stylesheets" />

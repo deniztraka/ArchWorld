@@ -1,15 +1,23 @@
-extends layout
-
-block head
+extends ../_bootstrap
+append head
     script(src='/socket.io/socket.io.js')
     script(src='/javascripts/libs/phaser.js')
+    script(src='/javascripts/helpers/assetHelper.js')
+    script(src='/javascripts/core/ClientNetworkEventManager.js')
+    script(src='/javascripts/libs/phaser-input.js')
     script(src='/javascripts/states/boot.js')
     script(src='/javascripts/states/preloader.js')
     script(src='/javascripts/states/mainMenu.js')
+    script(src='/javascripts/states/gamePlay.js')
     script(src='/javascripts/game.js')
+append styles
+  // Custom styles for this template 
+  link(href="../stylesheets/carousel.css", rel="stylesheet")
+  link(href="../stylesheets/custom.css", rel="stylesheet")
+block body
+  
 
-block content
-  h1 ArchWorld
-  p Welcome to Archworld
-
-  div(id='game')
+  .container.game
+    h1 ArchWorld
+    p Welcome to Archworld
+    div(id='game')
