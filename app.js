@@ -52,7 +52,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-nodeServer.listen(5000,function(){ // Listens to port 5000
+nodeServer.listen(process.env.PORT || 5000,function(){ // Listens to port 5000
     console.log('Listening on ' + nodeServer.address().port);
 });
 
